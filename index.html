@@ -8,6 +8,16 @@
 <meta property="og:title" content="Arikho Suites | Home Away From Home · Bulawayo">
 <meta property="og:description" content="Premium 3-bedroom self-catering apartments in the heart of Bulawayo. Business or leisure — a warm welcome awaits you.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#5C1F6E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=yes">
+<link rel="canonical" href="https://arikhosuites.co.zw/">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="ZW-BU">
+<meta name="geo.placename" content="Bulawayo">
+<meta name="keywords" content="Arikho Suites, Bulawayo accommodation, self-catering apartments, Bulawayo CBD hotel, Zimbabwe lodging, 3-bedroom apartments Bulawayo">
+<link rel="preload" as="image" href="images/hero-bedroom.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -79,7 +89,7 @@ body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-
 ═══════════════════════════════════════════════════════ */
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  height:78px;display:flex;align-items:center;justify-content:space-between;
+  height:130px;display:flex;align-items:center;justify-content:space-between;
   padding:0 5vw;transition:background .35s var(--ease),box-shadow .35s;
 }
 #nav.solid{
@@ -95,11 +105,9 @@ body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-
 }
 
 .nav-brand{display:flex;align-items:center;gap:.65rem;cursor:pointer;text-decoration:none}
-.nav-logo-img{height:48px;width:auto;object-fit:contain;display:block}
-.nav-logo-txt{font-family:var(--serif);font-size:1.55rem;font-weight:500;color:var(--plum);letter-spacing:.01em;line-height:1}
-.nav-logo-txt span{color:var(--olive)}
-#nav.dark-nav .nav-logo-txt{color:rgba(255,255,255,.9)}
-#nav.dark-nav .nav-logo-txt span{color:var(--olive-light)}
+.nav-logo-img{height:120px;width:auto;object-fit:contain;display:block;transition:height .2s;margin-top:-18px}
+@media(max-width:768px){.nav-logo-img{height:88px;margin-top:-12px}}
+.nav-logo-txt{display:none}
 
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-links a{
@@ -130,12 +138,15 @@ body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-
 }
 .nav-book::after{display:none!important}
 
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;transition:transform .2s}
 .burger span{display:block;width:24px;height:1.5px;background:var(--charcoal);transition:all .3s}
 #nav.dark-nav .burger span{background:var(--white)}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 .mob-menu{
-  position:fixed;top:78px;left:0;right:0;z-index:190;
+  position:fixed;top:130px;left:0;right:0;z-index:190;
   background:var(--white);border-top:1px solid var(--sand-deep);
   padding:1.8rem 5vw 2.4rem;display:none;flex-direction:column;gap:0;
   box-shadow:0 24px 48px rgba(0,0,0,.14);
@@ -435,13 +446,22 @@ h3.heading{font-family:var(--serif);font-size:1.65rem;font-weight:500;color:var(
 /* ═══════════════════════════════════════════════════════
    FACILITIES GRID
 ═══════════════════════════════════════════════════════ */
-.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.2rem;margin-top:3rem}
+.fac-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.4rem;
+  margin-top:3rem;
+}
+@media(max-width:1024px){.fac-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:860px){.fac-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.fac-grid{grid-template-columns:repeat(2,1fr)}}
 .fac-card{
   background:var(--white);border-radius:.875rem;
-  padding:2.2rem 1.6rem;text-align:center;
+  padding:2.4rem 1.8rem;text-align:center;
   box-shadow:0 2px 12px rgba(0,0,0,.06);
   transition:transform .3s var(--ease),box-shadow .3s var(--ease);
   border:1px solid rgba(92,31,110,.06);
+  display:flex;flex-direction:column;align-items:center;
 }
 .fac-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(92,31,110,.13)}
 .fac-icon{
@@ -629,7 +649,7 @@ h3.heading{font-family:var(--serif);font-size:1.65rem;font-weight:500;color:var(
 .amenity-item::before{content:'✓';color:var(--olive);font-weight:700;font-size:.75rem;flex-shrink:0}
 .sidebar-box{
   background:linear-gradient(140deg,var(--plum-soft) 0%,var(--white) 60%);
-  padding:2.4rem;border-radius:1rem;position:sticky;top:90px;
+  padding:2.4rem;border-radius:1rem;position:sticky;top:140px;
   border:1px solid rgba(92,31,110,.1);
   box-shadow:0 8px 32px rgba(92,31,110,.1);
 }
@@ -738,20 +758,132 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.55);padding:5rem 5vw 2
 @media(max-width:768px){
   .nav-links{display:none}
   .burger{display:flex}
-  #nav{height:70px}
-  .mob-menu{top:70px}
+  #nav{height:100px}
+  .mob-menu{top:100px}
   .wa-float{bottom:1.25rem;right:1.25rem;width:52px;height:52px}
   .wa-float svg{width:24px;height:24px}
   .amenity-grid{grid-template-columns:1fr}
+  /* Hero mobile */
+  .hero h1{font-size:clamp(2.4rem,9vw,3.8rem)}
+  .hero-sub{font-size:.95rem}
+  .hero-actions{flex-direction:column;gap:.8rem}
+  .hero-actions .btn-wa,.hero-actions .btn{width:100%;justify-content:center}
+  .hero-content{padding:0 5vw;max-width:100%}
+  .hero-badge span{font-size:.6rem;letter-spacing:.1em}
+  /* Split sections */
+  .split{grid-template-columns:1fr}
+  .split-img{min-height:280px}
+  .split-body{padding:3rem 5vw}
+  /* WA section */
+  .wa-sec{padding:4.5rem 5vw}
+  .wa-sec p{font-size:.9rem}
+  /* Gallery preview */
+  .gal-preview{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,150px)}
+  .gal-preview-item:first-child{grid-row:span 1}
+  /* Testimonials */
+  .testi-grid{grid-template-columns:1fr}
+  /* Values */
+  .values-grid{grid-template-columns:1fr}
+  /* Footer */
+  .ft-grid{grid-template-columns:1fr 1fr}
+  /* Room detail */
+  .room-detail-hero{grid-template-columns:1fr;grid-template-rows:260px 175px 175px}
+  .room-detail-hero .main{grid-row:span 1}
+  .detail-layout{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem 0}
+  .sidebar-box{position:static}
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  /* Location */
+  .loc-split{grid-template-columns:1fr}
+  .loc-map iframe{min-height:280px}
+  /* Stats */
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  /* Breadcrumb */
+  .breadcrumb{font-size:.7rem}
 }
 @media(max-width:600px){
   .rooms-grid{grid-template-columns:1fr}
   .room-card-header{flex-direction:column;gap:.5rem}
   .room-price-inline{align-self:flex-start}
+  .room-ctas{flex-direction:column}
+  .room-ctas .room-view-btn,.room-ctas .room-wa-btn{width:100%;justify-content:center}
+  /* Section headings */
+  h2.display{font-size:clamp(2rem,8vw,3rem)}
+  /* Footer */
+  .ft-grid{grid-template-columns:1fr}
+  .ft-bottom{flex-direction:column;text-align:center;gap:.75rem}
+  .ft-bottom-right{justify-content:center}
+  /* Buttons */
+  .btn-plum,.btn-olive,.btn-gold,.btn-outline-white,.btn-outline-plum,.btn-sand{padding:.85rem 1.6rem}
+  /* WA box */
+  .wa-box{padding:2.2rem 1.6rem}
+  /* Masonry */
+  .masonry{columns:2}
+  /* Page hero */
+  .pg-hero{height:44svh;min-height:280px;padding:0 5vw 2.5rem}
+  /* Loc info */
+  .loc-info{padding:3rem 5vw}
+}
+@media(max-width:420px){
+  .masonry{columns:1}
+  .hero-tagline{font-size:.65rem;letter-spacing:.12em}
+  .testi-grid{gap:1rem}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  #nav{padding:0 4vw}
+  .mob-menu{padding:1.5rem 4vw 2rem}
+}
+/* Touch device tap improvements */
+@media(hover:none){
+  .room-card:hover{transform:none;box-shadow:var(--shadow-card)}
+  .fac-card:hover{transform:none}
+  .value-card:hover{transform:none}
+  .testi-card:hover{transform:none}
+  .img-wrap:hover img{transform:none}
+  .gal-preview-item:hover img{transform:none}
+  .gal-preview-item:hover .gal-over{opacity:1}
+}
+/* Print styles */
+@media print{
+  #nav,.wa-float,.mob-menu,.lb,footer,.wa-sec{display:none!important}
+  .page.active{display:block!important}
+  body{background:white;color:black}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Arikho Suites",
+  "description": "Premium 3-bedroom self-catering apartments in Bulawayo, Zimbabwe. Established 2013.",
+  "url": "https://arikhosuites.co.zw",
+  "telephone": "+263783029961",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4th Avenue / Samuel Parirenyatwa Street",
+    "addressLocality": "Bulawayo",
+    "addressCountry": "ZW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -20.1569,
+    "longitude": 28.5752
+  },
+  "amenityFeature": [
+    {"@type":"LocationFeatureSpecification","name":"Free WiFi","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Secure Parking","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Self-Catering Kitchen","value":true},
+    {"@type":"LocationFeatureSpecification","name":"24/7 Security","value":true}
+  ],
+  "numberOfRooms": "3",
+  "checkinTime": "Flexible",
+  "checkoutTime": "Flexible",
+  "priceRange": "$$"
+}
+</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:fixed;top:-100%;left:1rem;z-index:9999;background:var(--plum);color:white;padding:.6rem 1.2rem;border-radius:0 0 .5rem .5rem;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">Skip to content</a>
 
 <!-- ══ NAVBAR ══════════════════════════════════════════════ -->
 <nav id="nav" class="dark-nav">
@@ -802,7 +934,8 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.55);padding:5rem 5vw 2
 <!-- ╔══════════════════════════════════════╗ -->
 <!-- ║            HOME PAGE                ║ -->
 <!-- ╚══════════════════════════════════════╝ -->
-<div id="page-home" class="page active">
+<div id="page-home" class="page active" role="main">
+  <div id="main-content"></div>
 
   <!-- HERO -->
   <section class="hero" id="mainHero">
@@ -840,7 +973,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.55);padding:5rem 5vw 2
   <div class="split reveal">
     <div class="split-img">
       <div class="img-wrap" style="height:100%">
-        <img src="images/reception.jpg" alt="Arikho Suites reception entrance">
+        <img src="images/reception.png" alt="Arikho Suites reception entrance">
         <div class="img-brand"><span class="img-brand-txt">Arikho Suites</span></div>
       </div>
     </div>
@@ -1165,7 +1298,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.55);padding:5rem 5vw 2
 <div id="page-contact" class="page">
   <div style="padding-top:78px"></div>
   <div class="pg-hero">
-    <img src="images/reception.jpg" alt="Arikho Suites reception">
+    <img src="images/reception.png" alt="Arikho Suites reception">
     <div class="pg-hero-grad"></div>
     <div class="pg-hero-content">
       <div class="eyebrow light" style="margin-bottom:.8rem">Get In Touch</div>
@@ -1240,7 +1373,7 @@ const WA = n => `https://wa.me/263783029961?text=${encodeURIComponent(n)}`;
 const HERO = [
   'images/hero-bedroom.jpeg',
   'images/room-executive-1.jpg',
-  'images/reception.jpeg'
+  'images/reception.png'
 ];
 
 // SVG icons for room feature pills
@@ -1352,7 +1485,7 @@ const GALLERY = [
   {src:'images/bathroom-main.jpg',     alt:'Bathroom with bathtub',       cat:'bathroom'},
   {src:'images/bathroom-wc.jpg',       alt:'Clean bathroom facilities',   cat:'bathroom'},
   {src:'images/toiletries.png',        alt:'Guest toiletries & towels',   cat:'bathroom'},
-  {src:'images/reception.jpg',         alt:'Reception entrance',          cat:'exterior'},
+  {src:'images/reception.png',         alt:'Reception entrance',          cat:'exterior'},
 ];
 
 const FACILITIES = [
@@ -1568,6 +1701,13 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') lbNav(1);
   if (e.key === 'Escape') { document.getElementById('lb').classList.remove('open'); document.body.style.overflow = ''; }
 });
+// Touch swipe for lightbox
+let lbTx = 0;
+document.getElementById('lb').addEventListener('touchstart', e => { lbTx = e.touches[0].clientX; }, { passive: true });
+document.getElementById('lb').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - lbTx;
+  if (Math.abs(dx) > 50) lbNav(dx < 0 ? 1 : -1);
+}, { passive: true });
 
 // ── ROOM DETAIL ────────────────────────────────────────────
 function showDetail(id) {
@@ -1652,14 +1792,19 @@ function go(p) {
   setTimeout(initReveals, 80);
   // close mobile menu if open
   document.getElementById('mobMenu').classList.remove('open');
+  document.querySelector('.burger').classList.remove('open');
 }
 
-function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
+function toggleMenu() {
+  document.getElementById('mobMenu').classList.toggle('open');
+  document.querySelector('.burger').classList.toggle('open');
+}
 
 // ── HERO SLIDESHOW ─────────────────────────────────────────
 function initHero() {
   const wrap = document.getElementById('heroSlides');
   const dots = document.getElementById('heroDots');
+  let idx = 0;
   HERO.forEach((src, i) => {
     const s = document.createElement('div');
     s.className = 'hero-slide' + (i === 0 ? ' on' : '');
@@ -1667,16 +1812,23 @@ function initHero() {
     wrap.appendChild(s);
     const d = document.createElement('div');
     d.className = 'hero-dot' + (i === 0 ? ' on' : '');
+    d.setAttribute('aria-label', `Slide ${i + 1}`);
     d.onclick = () => setSlide(i);
     dots.appendChild(d);
   });
-  let idx = 0;
   function setSlide(n) {
     document.querySelectorAll('.hero-slide').forEach((s, i) => s.classList.toggle('on', i === n));
     document.querySelectorAll('.hero-dot').forEach((d, i) => d.classList.toggle('on', i === n));
     idx = n;
   }
   setInterval(() => setSlide((idx + 1) % HERO.length), 5500);
+  // Touch swipe support
+  let tx = 0;
+  wrap.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  wrap.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 50) setSlide(dx < 0 ? (idx + 1) % HERO.length : (idx - 1 + HERO.length) % HERO.length);
+  }, { passive: true });
 }
 
 // ── SCROLL REVEAL ──────────────────────────────────────────
