@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://arikhosuites.co.zw/</loc>
+    <loc>https://arikhosuites.co.zw/index.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -28,36 +28,36 @@
     <loc>https://arikhosuites.co.zw/about.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://arikhosuites.co.zw/rooms/standard-room.html</loc>
+    <loc>https://arikhosuites.co.zw/room-standard-room.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://arikhosuites.co.zw/rooms/king-ensuite.html</loc>
+    <loc>https://arikhosuites.co.zw/room-king-ensuite.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://arikhosuites.co.zw/rooms/deluxe-room.html</loc>
+    <loc>https://arikhosuites.co.zw/room-deluxe-room.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://arikhosuites.co.zw/rooms/twin-room.html</loc>
+    <loc>https://arikhosuites.co.zw/room-twin-room.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://arikhosuites.co.zw/rooms/full-apartment.html</loc>
+    <loc>https://arikhosuites.co.zw/room-full-apartment.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
 </urlset>
