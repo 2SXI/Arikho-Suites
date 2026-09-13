@@ -863,3 +863,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding:.48rem 1.1rem;border-radius:50px;cursor:pointer;border:1.5px solid var(--stone-light);
   background:transparent;color:var(--stone);transition:all .2s;
 }
+
+/* ── FIXED-NAV OFFSET FOR INNER PAGES ─────────────────────
+   #nav is position:fixed (130px / 100px tall) and removed from
+   normal flow, so the first block on every inner page needs an
+   explicit push-down to sit below it instead of underneath it. */
+.page-offset{ margin-top:130px }
+@media(max-width:768px){ .page-offset{ margin-top:100px } }
